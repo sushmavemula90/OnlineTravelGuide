@@ -1,0 +1,1 @@
+{"version":3,"file":"admin.component.js","sourceRoot":"","sources":["../../../src/app/admin/admin.component.ts"],"names":[],"mappings":";;;;AAAA,wCAA0C;AASnC,IAAM,cAAc,GAApB,MAAM,cAAc;CAE1B,CAAA;AAFY,wCAAc;yBAAd,cAAc;IAP1B,IAAA,gBAAS,EAAC;QACT,QAAQ,EAAE,WAAW;QACrB,UAAU,EAAE,IAAI;QAChB,OAAO,EAAE,EAAE;QACX,WAAW,EAAE,wBAAwB;QACrC,QAAQ,EAAE,uBAAuB;KAClC,CAAC;GACW,cAAc,CAE1B"}
