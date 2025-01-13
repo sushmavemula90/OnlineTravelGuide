@@ -1,0 +1,155 @@
+<h2 id="formTitle">Accommodation Form</h2>
+
+<form id="accommodationForm" (ngSubmit)="submitAccommodation()" #accommodationForm="ngForm">
+  <label class="form-label" for="userName">User Name:</label>
+  <input type="text" id="fullName" name="fullName" placeholder="Enter your User name" [(ngModel)]="accommodationData.userName" required>
+
+  <div class="form-group">
+    <label for="email" class="form-label">Email Address:</label>
+    <input 
+  type="email" 
+  id="email" 
+  class="form-input" 
+  placeholder="Enter your email address" 
+  [(ngModel)]="accommodationData.email" 
+  name="email" 
+  required 
+  pattern="[a-zA-Z0-9._%+-]+[0-9]+@gmail\.com"
+  title="Email must be a Gmail address and include at least one number"
+/>
+
+  </div>
+
+  <label class="form-label" for="phone">Phone Number:</label>
+  <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" [(ngModel)]="accommodationData.phone" required>
+
+  <label class="form-label" for="address">Address:</label>
+  <textarea id="address" name="address" placeholder="Enter your address" [(ngModel)]="accommodationData.address" required></textarea>
+
+  <label class="form-label" for="location">Location to Visit:</label>
+  <select id="location" name="location" [(ngModel)]="accommodationData.location" (change)="updatePlaces()" required>
+    <option value="">--Select a State--</option>
+    <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+  </select>
+
+  <label class="form-label" for="place">Place:</label>
+  <select id="place" name="place" [(ngModel)]="accommodationData.place" (change)="onPlaceChange()" required>
+    <option value="">--Select a Place--</option>
+    <option *ngFor="let place of places" [value]="place">{{ place }}</option>
+  </select>
+
+  <!-- Duplicate messages for selected place -->
+  <div *ngIf="accommodationData.place">
+    <p><strong>Hotel Name:</strong> {{ accommodationData.hotelName }}</p>
+    <p><strong>Hotel Address:</strong> {{ accommodationData.hotelAddress }}</p>
+    <p><strong>Agent Name:</strong> {{ accommodationData.agentName }}</p>
+    <p><strong>Agent ID:</strong> {{ accommodationData.agentId }}</p>
+  </div>
+
+
+  <label class="form-label" for="accommodationType">Accommodation Type:</label>
+  <select id="accommodationType" name="accommodationType" [(ngModel)]="accommodationData.accommodationType" required>
+    <option value="">--Select Accommodation Type--</option>
+    <option value="Hotel">Hotel</option>
+    <option value="Resort">Resort</option>
+    <option value="Guest House">Guest House</option>
+  </select>
+
+  <label class="form-label" for="priceRange">Price Range:</label>
+  <select id="priceRange" name="priceRange" [(ngModel)]="accommodationData.priceRange" required>
+    <option value="">--Select Price Range--</option>
+    <option value="Low">Low (₹1000 - ₹3000)</option>
+    <option value="Medium">Medium (₹3000 - ₹6000)</option>
+    <option value="High">High (₹6000+)</option>
+  </select>
+
+  <label class="form-label" for="checkin">Check-in Date:</label>
+  <input type="date" id="checkin" name="checkin" [(ngModel)]="accommodationData.checkin" required>
+
+  <br>
+
+  <label class="form-label" for="checkout">Check-out Date:</label>
+  <input type="date" id="checkout" name="checkout" [(ngModel)]="accommodationData.checkout" required>
+
+  <label class="form-label" for="persons">Number of Persons:</label>
+  <input type="number" id="persons" name="persons" min="1" placeholder="Enter number of persons" [(ngModel)]="accommodationData.persons" required>
+
+  <label class="form-label" for="roomType">Room Type:</label>
+  <select id="roomType" name="roomType" [(ngModel)]="accommodationData.roomType" required>
+    <option value="">--Select Room Type--</option>
+    <option value="Single">Single</option>
+    <option value="Double">Double</option>
+    <option value="Suite">Suite</option>
+    <option value="Family">Family</option>
+  </select>
+
+  <label class="form-label" for="specialNeeds">Disabled person:</label>
+  <input type="checkbox" id="specialNeeds" name="specialNeeds" [(ngModel)]="accommodationData.specialNeeds"> I have special needs.
+
+  <label class="form-label" for="payment">Payment Details:</label>
+  <select id="payment" name="payment" [(ngModel)]="accommodationData.payment" required>
+    <option value="">--Select Payment Method--</option>
+    <option value="Credit Card">Credit Card</option>
+    <option value="Debit Card">Debit Card</option>
+    <option value="PayPal">PayPal</option>
+    <option value="Bank Transfer">Bank Transfer</option>
+  </select>
+
+  <div class="form-group">
+    <label class="form-label">Additional Services:</label><br>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="service1" value="Transport" [(ngModel)]="accommodationData.additionalServices" (change)="updateAdditionalServices($event)">
+      <label class="form-check-label" for="service1">Transport</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="service2" value="Meals" [(ngModel)]="accommodationData.additionalServices" (change)="updateAdditionalServices($event)">
+      <label class="form-check-label" for="service2">Meals</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="service3" value="Spa" [(ngModel)]="accommodationData.additionalServices" (change)="updateAdditionalServices($event)">
+      <label class="form-check-label" for="service3">Spa</label>
+    </div>
+  </div>
+
+  <h3 id="termsTitle">Terms and Conditions</h3>
+  <div class="terms">
+    <input type="checkbox" id="terms1" name="terms1" required>
+    <label for="terms1">I have filled all the details correctly.</label>
+    <br>
+    <input type="checkbox" id="terms2" name="terms2" required>
+    <label for="terms2">Booking confirmation.</label>
+  </div>
+  <button type="submit" id="submitBtn">Submit</button>
+</form>
+
+<!-- Footer Section -->
+<footer class="footer bg-dark text-white text-center py-3">
+  <div class="container d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center">
+    <div class="text-center mb-3 mb-md-0">
+      <p class="m-0">© 2024 Online Tour Guide. All rights reserved.</p>
+      <div class="footer-icons">
+        <a href="https://www.facebook.com/share/boJXacJUyFAjLFUn/" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://x.com/InfosysBatch2?s=08" target="_blank" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/online_travelguide/" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/online-travel-guide-637431336/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+    <div class="contact-info text-md-right">
+      <p class="contact-title">Contact Us</p>
+      <p class="contact-item">
+        <span class="email-symbol">✉</span> Tours69&#64;gmail.com
+      </p>
+      <p class="contact-item">
+        <span class="phone-symbol">☎</span> 918767899
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,94 @@
+<div class="container">
+  <h2>User Data</h2>
+  <button (click)="toggleNewUserForm()" class="btn btn-primary mb-3">Add User</button>
+
+  <!-- New User Form -->
+  <div *ngIf="showNewUserForm" class="card p-3 mb-3">
+    <h3>Add New User</h3>
+    <div class="form-group">
+      <label>Username</label>
+      <input [(ngModel)]="newUser.username" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Full Name</label>
+      <input [(ngModel)]="newUser.fullName" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Phone</label>
+      <input [(ngModel)]="newUser.phone" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input [(ngModel)]="newUser.email" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <div class="input-group">
+        <input
+          [(ngModel)]="newUser.password"
+          [type]="showPassword ? 'text' : 'password'"
+          class="form-control"
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$"
+          required
+        />
+        <span class="input-group-text" (click)="togglePasswordVisibility()" style="cursor: pointer;">
+          <i [ngClass]="showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+        </span>
+      </div>
+      <small *ngIf="!passwordPattern.test(newUser.password ?? '')" class="text-danger">
+        Password must be at least 8 characters long and include a mix of uppercase, lowercase, numbers, and special characters.
+      </small>
+    </div>
+    
+    <button (click)="saveNewUser()" class="btn btn-success mt-3" [disabled]="!isNewUserValid()">Save</button>
+  </div>
+
+  <!-- Existing User Table -->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Full Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td *ngIf="editUser?.originalUsername !== user.username">{{ user.username }}</td>
+        <td *ngIf="editUser?.originalUsername === user.username">
+          <input [(ngModel)]="editUser.username"/>
+        </td>
+
+        <td *ngIf="editUser?.originalUsername !== user.username">{{ user.fullName }}</td>
+        <td *ngIf="editUser?.originalUsername === user.username">
+          <input [(ngModel)]="editUser.fullName" />
+        </td>
+
+        <td *ngIf="editUser?.originalUsername !== user.username">{{ user.phone }}</td>
+        <td *ngIf="editUser?.originalUsername === user.username">
+          <input [(ngModel)]="editUser.phone" />
+        </td>
+
+        <td *ngIf="editUser?.originalUsername !== user.username">{{ user.email }}</td>
+        <td *ngIf="editUser?.originalUsername === user.username">
+          <input [(ngModel)]="editUser.email" />
+        </td>
+
+        <td *ngIf="editUser?.originalUsername !== user.username">*****</td>
+        <td *ngIf="editUser?.originalUsername === user.username">
+          <input [(ngModel)]="editUser.password" type="text" />
+        </td>
+
+        <td>
+          <button *ngIf="editUser?.originalUsername !== user.username" (click)="editUserDetails(user)" class="btn btn-warning">Edit</button>
+          <button *ngIf="editUser?.originalUsername === user.username" (click)="saveUser()" class="btn btn-success">Save</button>
+          <button *ngIf="editUser?.originalUsername === user.username" (click)="cancelEdit()" class="btn btn-secondary">Cancel</button>
+          <button (click)="deleteUser(user.username)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

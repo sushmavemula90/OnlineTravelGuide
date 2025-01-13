@@ -1,0 +1,149 @@
+<div class="registration-container">
+  <h2 class="registration-title">Registration Form</h2>
+  <form id="registration-form" (ngSubmit)="onSubmit()" #registerForm="ngForm">
+    
+    <!-- Full Name Field -->
+    <div class="form-group">
+      <label for="fullname" class="form-label">Full Name:</label>
+      <input type="text" id="fullname" class="form-input" placeholder="Enter your full name" [(ngModel)]="fullname" name="fullname" required>
+    </div>
+
+    <!-- Username Field -->
+    <div class="form-group">
+      <label for="username" class="form-label">Username:</label>
+      <input type="text" id="username" class="form-input" placeholder="Enter your username" [(ngModel)]="username" name="username" required>
+    </div>
+
+    <!-- Email and Send OTP Button -->
+    <div class="form-group">
+      <label for="email" class="form-label">Email Address:</label>
+      <input 
+        type="email" 
+        id="email" 
+        class="form-input" 
+        placeholder="Enter your email address" 
+        [(ngModel)]="email" 
+        name="email" 
+        required 
+        pattern="[a-zA-Z0-9._%+-]+[0-9]+@gmail\.com"
+        title="Email must be a Gmail address and include at least one number"
+      >
+      <button type="button" (click)="sendOTP()" class="send-otp-button">Send OTP</button>
+    </div>
+
+    <!-- OTP Field and Validate OTP Button on the Same Line -->
+    <div class="form-group otp-group" *ngIf="isOtpSent && !isOtpValidated">
+      <input type="text" class="otp-input" [(ngModel)]="otp" name="otp" placeholder="Enter OTP" required />
+      <button type="button" (click)="validateOtp()" class="validate-otp-button">Validate OTP</button>
+    </div>
+    
+    <!-- OTP Validation Message -->
+    <span *ngIf="isOtpValidated" style="color: green;">✔️ OTP Validated</span>
+    <span *ngIf="!isOtpValidated && otpAttempted" class="error-message" style="color: red;">
+      Please validate OTP before proceeding
+    </span>
+
+    <!-- Remaining Fields (Visible but Disabled until OTP is validated) -->
+    <div class="form-group">
+      <label for="phone" class="form-label">Phone Number:</label>
+      <input 
+        type="tel" 
+        id="phone" 
+        class="form-input" 
+        placeholder="Enter your phone number" 
+        [(ngModel)]="phone" 
+        name="phone" 
+        [disabled]="!isOtpValidated" 
+        required 
+        pattern="^\d{10}$" 
+        title="Phone number must be exactly 10 digits."
+      />
+      <span *ngIf="phone.length !== 10 && phone.length > 0" class="error-message" style="color: red;">
+        Phone number must be exactly 10 digits.
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label for="password" class="form-label">Password:</label>
+      <input 
+        type="password" 
+        id="password" 
+        class="form-input" 
+        placeholder="Enter your password" 
+        [(ngModel)]="password" 
+        name="password" 
+        [disabled]="!isOtpValidated" 
+        [type]="showPassword ? 'text' : 'password'" 
+        required
+      />
+      <i class="eye-icon" (click)="togglePasswordVisibility()">
+        <i class="fas" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+      </i>
+      <small class="form-text text-muted">Must contain at least one uppercase letter, one number, and one special character.</small>
+    </div>
+    
+    <div class="form-group">
+      <label for="confirm-password" class="form-label">Confirm Password:</label>
+      <input 
+        type="password" 
+        id="confirm-password" 
+        class="form-input" 
+        placeholder="Confirm your password" 
+        [(ngModel)]="confirmPassword" 
+        name="confirmPassword" 
+        [disabled]="!isOtpValidated" 
+        [type]="showConfirmPassword ? 'text' : 'password'" 
+        required
+      />
+    </div>
+    
+    
+     
+
+    <div class="form-group">
+      <input type="checkbox" id="terms" [(ngModel)]="isChecked" [disabled]="!isOtpValidated" required>
+      <label for="terms" class="form-label">I confirm that the information above is correct.</label>
+    </div>
+
+    <button type="submit" class="submit-button" id="submit-button" [disabled]="!isOtpValidated">Submit</button>
+
+  </form>
+  <p *ngIf="successMessage">{{ successMessage }}</p>
+  <p *ngIf="errorMessage">{{ errorMessage }}</p>
+  <!-- Register Link for Existing Users -->
+<div class="register-link">
+  <p>Already have an account? <a routerLink="/home">Login</a></p>
+</div>
+</div>
+
+<!-- Footer Section -->
+<footer class="footer bg-dark text-white text-center py-3">
+  <div class="container d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center">
+    <div class="text-center mb-3 mb-md-0">
+      <p class="m-0">© 2024 Online Tour Guide. All rights reserved.</p>
+      <div class="footer-icons">
+        <a href="https://www.facebook.com/share/boJXacJUyFAjLFUn/" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://x.com/InfosysBatch2?s=08" target="_blank" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/online_travelguide/" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/online-travel-guide-637431336/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+    <div class="contact-info text-md-right">
+      <p class="contact-title">Contact Us</p>
+      <p class="contact-item">
+        <span class="email-symbol">✉</span> Tours69&#64;gmail.com
+      </p>
+      <p class="contact-item">
+        <span class="phone-symbol">☎</span> 918767899
+      </p>
+    </div>
+  </div>
+</footer>

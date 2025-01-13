@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "outDir": "./build",
+      "strict": true,
+      "esModuleInterop": true,
+      "include": ["server/**/*.ts"], // adjust the pattern
+    "exclude": ["build"] // adjust or remove
+
+    },
+    "include": ["server/**/*"]
+  }
+  

@@ -1,0 +1,85 @@
+.container-gallery-section{
+width: 97%;
+}
+.gallery-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: rgb(3, 39, 3);
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.gallery-row {
+  display: flex;
+  justify-content: space-between; 
+  width: 100%;
+}
+
+.gallery-img-container {
+  position: relative;
+  width: 24%; /* Adjust width to allow four images in a row */
+  height: 250px; /* Set a fixed height for uniformity */
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure images cover the container */
+}
+
+.img-text {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Custom footer styles */
+footer {
+  background-color: #343a40;
+  color: white;
+  padding: 2px;
+  text-align: center;
+}
+
+footer a {
+  color: #11d038ac;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #f8f9fa;
+}
+
+footer p {
+  margin: 0;
+}
+
+.footer-icons a {
+  color: white;
+  margin: 0 10px;
+  font-size: 1rem;
+}
+
+.footer-icons a:hover {
+  color: #11d038ac;
+}
+
+.contact-info {
+  text-align: left; 
+  margin-top: 10px; 
+}
+
+.contact-title {
+  padding: 0 25%;
+  border-bottom: 2px solid; 
+  margin-bottom: 10px; 
+}

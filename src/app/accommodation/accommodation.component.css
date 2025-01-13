@@ -1,0 +1,98 @@
+#formTitle {
+    text-align: center;
+    color: #333;
+}
+#accommodationForm {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type="date"] {
+    width: 100%;
+}
+.checkboxes label {
+    display: inline-block;
+    margin-right: 10px;
+}
+.terms {
+    margin-bottom: 15px;
+}
+#submitBtn {
+    display: block;
+    width: 110px; /* Set a fixed width to keep it small */
+    padding: 8px 15px; /* Adjust padding for a smaller look */
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 auto; /* Center the button */
+    box-sizing: border-box;
+}
+
+#submitBtn:hover {
+    background-color: #218838; /* Slightly darker on hover */
+}
+
+
+#submitBtn:hover {
+    background-color: #218838;
+}
+
+/* Custom footer styles */
+footer {
+  background-color: #343a40;
+  color: white;
+  padding: 2px;
+  text-align: center;
+}
+
+footer a {
+  color: #11d038ac;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #f8f9fa;
+}
+
+footer p {
+  margin: 0;
+}
+
+.footer-icons a {
+  color: white;
+  margin: 0 10px;
+  font-size: 1rem;
+}
+
+.footer-icons a:hover {
+  color: #11d038ac;
+}
+
+.contact-info {
+  text-align: left; 
+  margin-top: 10px; 
+}
+
+.contact-title {
+  padding: 0 25%;
+  border-bottom: 2px solid; 
+  margin-bottom: 10px; 
+}

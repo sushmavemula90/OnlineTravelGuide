@@ -1,0 +1,91 @@
+<div class="booking-container">
+  <h2>Booking Section</h2>
+
+  <!-- Fetch Booking Form -->
+  <form (ngSubmit)="fetchBookingDetails()" class="booking-form">
+    <div class="form-group">
+      <label for="userName">User Name</label>
+      <input
+        type="text"
+        id="userName"
+        [(ngModel)]="userName"
+        name="userName"
+        placeholder="Enter your User name"
+        class="form-control"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Fetch Booking</button>
+  </form>
+
+  <!-- Display Booking Details if available -->
+  <div *ngIf="bookingDetails && bookingDetails.length > 0" class="booking-details">
+    <!-- Loop through each booking -->
+    <div *ngFor="let booking of bookingDetails; let i = index" class="booking-item">
+      <p><strong>User Name:</strong> {{ booking.userName }}</p>
+      <p><strong>Email:</strong> {{ booking.email }}</p>
+      <p><strong>Phone:</strong> {{ booking.phone }}</p>
+      <p><strong>Address:</strong> {{ booking.address }}</p>
+      <p><strong>Location:</strong> {{ booking.location }}</p>
+      <p><strong>Place:</strong> {{ booking.place }}</p>
+      <p><strong>Accommodation Type:</strong> {{ booking.accommodationType }}</p>
+      <p><strong>Price Range:</strong> {{ booking.priceRange }}</p>
+      <p><strong>Check-in Date:</strong> {{ booking.checkin }}</p>
+      <p><strong>Check-out Date:</strong> {{ booking.checkout }}</p>
+      <p><strong>Persons:</strong> {{ booking.persons }}</p>
+      <p><strong>Room Type:</strong> {{ booking.roomType }}</p>
+      <p><strong>Payment Method:</strong> {{ booking.payment }}</p>
+      <p><strong>Additional Services:</strong> {{ booking.additionalServices.join(', ') }}</p>
+      <p><strong>Special Needs:</strong> {{ booking.specialNeeds ? 'Yes' : 'No' }}</p>
+      <p><strong>Hotel Name:</strong> {{ booking.hotelName }}</p>
+      <p><strong>Hotel Address:</strong> {{ booking.hotelAddress }}</p>
+      <p><strong>Agent Name:</strong> {{ booking.agentName }}</p>
+      <p><strong>Agent ID:</strong> {{ booking.agentId }}</p>
+      
+      <!-- Display Remaining Days (Handle null or negative values) -->
+      <p><strong>Remaining Days:</strong>
+        {{ remainingDays[i] !== null && remainingDays[i] < 0 ? 'Declined' : remainingDays[i] }}
+      </p>
+
+      <!-- Cancel Booking Button -->
+      <button type="button" (click)="deleteBooking(booking)" class="btn btn-danger">
+        Cancel Booking
+      </button>
+    </div>
+  </div>
+
+  <!-- If no bookings are found -->
+  <div *ngIf="isSubmitted && bookingDetails && bookingDetails.length === 0">
+    <p>No bookings found for this user.</p>
+  </div>
+</div>
+<!-- Footer Section -->
+<footer class="footer bg-dark text-white text-center py-3">
+  <div class="container d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center">
+    <div class="text-center mb-3 mb-md-0">
+      <p class="m-0">© 2024 Online Tour Guide. All rights reserved.</p>
+      <div class="footer-icons">
+        <a href="https://www.facebook.com/share/boJXacJUyFAjLFUn/" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://x.com/InfosysBatch2?s=08" target="_blank" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/online_travelguide/" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/online-travel-guide-637431336/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+    <div class="contact-info text-md-right">
+      <p class="contact-title">Contact Us</p>
+      <p class="contact-item">
+        <span class="email-symbol">✉</span> Tours69&#64;gmail.com
+      </p>
+      <p class="contact-item">
+        <span class="phone-symbol">☎</span> 918767899
+      </p>
+    </div>
+  </div>
+</footer>

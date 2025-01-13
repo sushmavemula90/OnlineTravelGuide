@@ -1,0 +1,180 @@
+<div id="feedback-container">
+    <h2 id="form-title">Feedback Form of Travel Guide</h2>
+  
+    <form id="feedback-form" (ngSubmit)="submitFeedback()" #feedbackForm="ngForm">
+  
+        <!-- Visitor's Name (Required) -->
+        <div class="form-group">
+            <label class="form-label required" for="visitorName">Visitor's Name:</label>
+            <input type="text" id="visitorName" class="form-input" placeholder="Enter full name" [(ngModel)]="feedbackData.visitorName" name="visitorName" required>
+        </div>
+  
+        <!-- Email Address (Required) -->
+        <div class="form-group">
+          <label for="email" class="form-label">Email Address:</label>
+          <input 
+            type="email" 
+            id="email" 
+            class="form-input" 
+            placeholder="Enter your email address" 
+            [(ngModel)]="feedbackData.email" 
+            name="email" 
+            required 
+            pattern="[a-zA-Z][a-zA-Z0-9]*\d+@gmail\.com"
+            title="Email must start with letters, contain at least one number, and end with '@gmail.com'"
+          >
+        </div>
+  
+        <!-- Phone Number -->
+        <div class="form-group">
+            <label class="form-label" for="phone">Phone Number:</label>
+            <input type="text" id="phone" class="form-input" placeholder="Enter phone number" [(ngModel)]="feedbackData.phone" name="phone">
+        </div>
+  
+        <!-- Destination Visited (Required) -->
+        <div class="form-group">
+            <label class="form-label required" for="destination">Destination Traveled:</label>
+            <input type="text" id="destination" class="form-input" placeholder="Enter destination name" [(ngModel)]="feedbackData.destination" name="destination" required>
+        </div>
+  
+        <!-- Agent Name (Required) -->
+        <div class="form-group">
+            <label class="form-label required" for="agentName">Agent Name:</label>
+            <input type="text" id="agentName" class="form-input" placeholder="Enter agent's name" [(ngModel)]="feedbackData.agentName" name="agentName" required>
+        </div>
+  
+        <!-- Visited Dates From and To (Both Required) -->
+        <div class="form-group">
+            <label class="form-label required" for="visitedDatesFrom">Visited Dates:</label>
+            <div class="d-flex">
+                <input type="date" id="visitedDatesFrom" class="form-date form-input" [(ngModel)]="feedbackData.visitedDatesFrom" name="visitedDatesFrom" required>
+                <span class="date-separator">to</span>
+                <input type="date" id="visitedDatesTo" class="form-date form-input" [(ngModel)]="feedbackData.visitedDatesTo" name="visitedDatesTo" required>
+            </div>
+        </div>
+  
+        <!-- Dropdown Rating (Required) -->
+        <div class="form-group">
+            <label class="form-label required" for="rating">Rate your experience:</label>
+            <select id="rating" class="dropdown" [(ngModel)]="feedbackData.rating" name="rating" required>
+                <option value="">Select a rating</option>
+                <option value="Excellent">Excellent</option>
+                <option value="Good">Good</option>
+                <option value="Bad">Bad</option>
+                <option value="Worst">Worst</option>
+            </select>
+        </div>
+  
+        <!-- Feedback Options -->
+        <div class="form-group">
+            <label class="form-label"><h4>Rate the following services:</h4></label>
+            <br>
+  
+            <!-- Room Services (Optional) -->
+            <div class="form-group">
+                <label class="form-label" for="planningTrip">Room Services:</label>
+                <select id="planningTrip" class="dropdown" [(ngModel)]="feedbackData.planningTrip" name="planningTrip">
+                    <option value="">Select a rating</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Good">Good</option>
+                    <option value="Bad">Bad</option>
+                    <option value="Worst">Worst</option>
+                </select>
+            </div>
+  
+            <!-- Exploration (Optional) -->
+            <div class="form-group">
+                <label class="form-label" for="exploration">Exploration:</label>
+                <select id="exploration" class="dropdown" [(ngModel)]="feedbackData.exploration" name="exploration">
+                    <option value="">Select a rating</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Good">Good</option>
+                    <option value="Bad">Bad</option>
+                    <option value="Worst">Worst</option>
+                </select>
+            </div>
+  
+            <!-- Food and Dining (Optional) -->
+            <div class="form-group">
+                <label class="form-label" for="wellBehaved">Food and Dinning:</label>
+                <select id="wellBehaved" class="dropdown" [(ngModel)]="feedbackData.wellBehaved" name="wellBehaved">
+                    <option value="">Select a rating</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Good">Good</option>
+                    <option value="Bad">Bad</option>
+                    <option value="Worst">Worst</option>
+                </select>
+            </div>
+  
+            <!-- Transportation (Optional) -->
+            <div class="form-group">
+                <label class="form-label" for="professionallyLooking">Transportation:</label>
+                <select id="professionallyLooking" class="dropdown" [(ngModel)]="feedbackData.professionallyLooking" name="professionallyLooking">
+                    <option value="">Select a rating</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Good">Good</option>
+                    <option value="Bad">Bad</option>
+                    <option value="Worst">Worst</option>
+                </select>
+            </div>
+        </div>
+  
+        <!-- Detailed Feedback Section -->
+        <h4>Detailed Feedback</h4>
+  
+        <!-- Did you enjoy the trip? -->
+        <div class="form-group">
+            <label class="form-label">Did you enjoy the trip?</label>
+            <div>
+                <label><input type="radio" id="enjoyedTripYes" name="enjoyedTrip" [(ngModel)]="feedbackData.enjoyedTrip" value="yes"> Yes</label>
+                <label><input type="radio" id="enjoyedTripNo" name="enjoyedTrip" [(ngModel)]="feedbackData.enjoyedTrip" value="no"> No</label>
+            </div>
+        </div>
+  
+        <!-- What areas could be improved? -->
+        <div class="form-group">
+            <label class="form-label">What practice could be improved:</label>
+            <textarea id="areasToImprove" rows="3" class="form-input" placeholder="Enter suggestions" [(ngModel)]="feedbackData.areasToImprove" name="areasToImprove"></textarea>
+        </div>
+  
+        <!-- Any suggestions? -->
+        <div class="form-group">
+            <label class="form-label">Any suggestions:</label>
+            <textarea id="suggestions" rows="3" class="form-input" placeholder="Enter suggestions" [(ngModel)]="feedbackData.suggestions" name="suggestions"></textarea>
+        </div>
+  
+        <!-- Submit Button -->
+        <button type="submit" id="submitBtn">Submit</button>
+    </form>
+  </div>
+<!-- Footer Section -->
+<footer class="footer bg-dark text-white text-center py-3">
+    <div class="container d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center">
+      <div class="text-center mb-3 mb-md-0">
+        <p class="m-0">© 2024 Online Tour Guide. All rights reserved.</p>
+        <div class="footer-icons">
+          <a href="https://www.facebook.com/share/boJXacJUyFAjLFUn/" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://x.com/InfosysBatch2?s=08" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com/online_travelguide/" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/online-travel-guide-637431336/" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+      <div class="contact-info text-md-right">
+        <p class="contact-title">Contact Us</p>
+        <p class="contact-item">
+          <span class="email-symbol">✉</span> Tours69&#64;gmail.com
+        </p>
+        <p class="contact-item">
+          <span class="phone-symbol">☎</span> 918767899
+        </p>
+      </div>
+    </div>
+  </footer>

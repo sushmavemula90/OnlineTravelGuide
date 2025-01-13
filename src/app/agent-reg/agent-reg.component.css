@@ -1,0 +1,141 @@
+#feedback-container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+}
+
+.d-flex .form-date {
+    width: 48%;
+}
+
+.d-flex .date-separator {
+    margin: 0 10px;
+}
+
+.text-area {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#form-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+
+.dropdown {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+}
+
+
+#registration-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#submitBtn {
+    display: block;
+    width: 110px; /* Set a fixed width to keep it small */
+    padding: 8px 15px; /* Adjust padding for a smaller look */
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 auto; /* Center the button */
+    box-sizing: border-box;
+}
+
+#submitBtn:hover {
+    background-color: #218838; /* Slightly darker on hover */
+}
+
+
+#submitBtn:hover {
+    background-color: #218838;
+}
+#thanks-message {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+
+
+
+
+/* Custom footer styles */
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 2px;
+    text-align: center;
+  }
+  
+  footer a {
+    color: #11d038ac;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    color: #f8f9fa;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  .footer-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1rem;
+  }
+  
+  .footer-icons a:hover {
+    color: #11d038ac;
+  }
+  
+  .contact-info {
+    text-align: left; 
+    margin-top: 10px; 
+  }
+  
+  .contact-title {
+    padding: 0 25%;
+    border-bottom: 2px solid; 
+    margin-bottom: 10px; 
+  }
+  
+  

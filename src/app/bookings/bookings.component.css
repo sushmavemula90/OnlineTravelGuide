@@ -1,0 +1,143 @@
+/* Ensure the page takes up the full viewport height */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main container styling */
+.booking-container {
+  flex: 1; 
+  max-width: 100%;
+  margin: 0 auto;
+  overflow-x: auto;
+  white-space: nowrap;
+  height: 58rem;
+}
+
+h2 {
+  text-align: center;
+}
+
+.booking-form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+}
+
+.btn {
+  margin-top: 15px;
+}
+
+.booking-details {
+  margin-top: 20px;
+  background-color: #f1f1f1;
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  justify-content: center;
+}
+
+.booking-details.multiple {
+  justify-content: flex-start;
+}
+
+.booking-item {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+  display: inline-block;
+  white-space: normal;
+  margin-right: 10px;
+}
+
+.booking-item p {
+  margin: 5px 0;
+}
+
+.booking-item .btn-danger {
+  margin-top: 10px;
+}
+/* Footer Styling */
+.footer {
+  top: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #333; /* Dark background */
+  color: #ffffff; /* Text color */
+  text-align: center;
+  padding: 10px 0;
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer .footer-icons {
+  margin-top: 10px;
+}
+
+.footer .footer-icons a {
+  color: #ffffff;
+  margin: 0 8px;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.footer .footer-icons a:hover {
+  color: #11d038ac; /* Light green on hover */
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer .contact-info {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.footer .contact-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+  padding: 0 25%; /* Optional padding for separation */
+  border-bottom: 2px solid #ffffff; /* White underline */
+}
+
+.footer .contact-item {
+  margin: 2px 0;
+}
+
+.footer .email-symbol,
+.footer .phone-symbol {
+  font-weight: bold;
+}
+
+footer a {
+  color: #11d038ac; /* Green link color */
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #f8f9fa; /* Light color when hovered */
+}
+

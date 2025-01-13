@@ -1,0 +1,253 @@
+.navbar-brand .online-tour {
+    color: #11d038ac;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.navbar-brand .guide {
+    color: #3be0f6b9;
+    font-size: 1.6rem;
+}
+
+.navbar {
+    padding: 0.8rem 0.8rem;
+    background-color: #343a40;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    padding: 0.5rem 0.5rem;
+    font-size: 1.3rem;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f8f9fa;
+    background-color: #3be0f6b9;
+    border-radius: 4px;
+}
+
+.navbar-toggler {
+    border-color: #343a40;
+}
+
+/* Search bar styles */
+.search-bar {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding-left: 40px;
+    padding-right: 40px;
+    height: 100%; /* Make input fill the height of the .search-bar */
+    border-radius: 6px; /* Adjust border-radius for larger input */
+    border: 1px solid #ced4da;
+    font-size: 1.3rem;
+}
+
+.search-bar .fa-search {
+    position: absolute;
+    left: 10px;
+    color: gray;
+}
+
+.search-bar .fa-microphone {
+    position: absolute;
+    right: 15px;
+    color: gray;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+    border-radius: 50%; 
+}
+
+/* Dark blue round shadow on hover */
+.search-bar .fa-microphone:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 139, 0.6);
+}
+
+/* Dark blue round shadow on click */
+.search-bar .fa-microphone:active {
+    box-shadow: 0 0 8px rgba(0, 0, 139, 0.8);
+}
+.suggestions-dropdown {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  .suggestions-dropdown li {
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+  .suggestions-dropdown li:hover {
+    background-color: #f0f0f0;
+  }
+
+/* Login/Register button */
+.navbar-nav .nav-link.btn {
+    margin-left: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.navbar-nav .nav-link.btn:hover {
+    background-color: #11d038ac;
+    color: white;
+}
+
+/* Dropdown styles */
+.login-dropdown {
+    position: fixed;
+    top: 60px; /* Adjust based on navbar height */
+    right: 20px; /* Adjust position */
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1000;
+    width: 300px; /* Width of the dropdown */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.close-button {
+    cursor: pointer;
+    color: #333;
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close-button:hover {
+    color: darkgreen; /* Change color on hover */
+}
+
+.login-title {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+}
+
+.password-container {
+    position: relative;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.login-container {
+    padding: 20px;
+    display: flex; /* Use Flexbox */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+}
+
+.login-button {
+    background-color: #11d038ac;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;  
+}
+
+.login-button:hover {
+    background-color: #10c039; /* Darker green on hover */
+}
+
+.register-link {
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Added styles for Forgot Password link */
+.forgot-password {
+    margin-top: 10px; /* Spacing above the link */
+}
+
+.forgot-password a {
+    color: #007bff; /* Bootstrap primary color for links */
+    text-decoration: none; /* Remove underline */
+    font-size: 14px; /* Font size */
+}
+.forgot-password a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #0056b3; /* Darker shade on hover */
+}
+/* User Dropdown Styling */
+.navbar-nav .dropdown-menu {
+    width: 250px; /* Adjust width to your preference */
+    border-radius: 6px;
+    padding: 10px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-item {
+    padding: 10px 15px;
+    color: #343a40;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #11d038ac;
+    color: white;
+    border-radius: 4px;
+}
+
+/* Profile Link Styling */
+.dropdown-menu .dropdown-item i {
+    margin-right: 8px; /* Spacing for icons */
+}
+
+/* Divider Styling */
+.dropdown-divider {
+    height: 1px;
+    margin: 0.5rem 0;
+    background-color: #e9ecef;
+}
+
+/* User Icon Styling */
+.nav-item.dropdown .nav-link {
+    display: flex;
+    align-items: center;
+    color: #f8f9fa;
+    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+}
+
+.nav-item.dropdown .nav-link i {
+    margin-right: 8px;
+}
+
+/* Dropdown Toggle */
+.navbar-nav .nav-link.dropdown-toggle:hover {
+    background-color: #3be0f6b9;
+    border-radius: 4px;
+}

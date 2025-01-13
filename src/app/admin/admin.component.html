@@ -1,0 +1,71 @@
+<div class="login-container">
+  <h2 class="login-title">Admin Login</h2>
+  <form (submit)="onLogin()">
+    <div class="form-group">
+      <label for="admin-username" class="form-label">Admin Name:</label>
+      <input
+        type="text"
+        [(ngModel)]="adminUsername"
+        id="admin-username"
+        class="form-input"
+        placeholder="Enter your user name here"
+        required
+        name="adminUsername"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="admin-password" class="form-label">Password:</label>
+      <div class="password-container">
+        <input
+          [type]="showPassword ? 'text' : 'password'"
+          [(ngModel)]="adminPassword"
+          id="admin-password"
+          class="form-input"
+          placeholder="Enter your password"
+          required
+          name="adminPassword"
+        />
+        <span class="eye-icon" (click)="togglePasswordVisibility()">
+          <i [ngClass]="showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+        </span>
+      </div>
+    </div>
+
+    <button type="submit" class="login-button" id="admin-login-button">Login</button>
+    <p *ngIf="loginMessage">{{ loginMessage }}</p>
+  </form>
+</div>
+
+
+<!-- Footer Section -->
+<footer class="footer bg-dark text-white text-center py-3">
+  <div class="container d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center">
+    <div class="text-center mb-3 mb-md-0">
+      <p class="m-0">© 2024 Online Tour Guide. All rights reserved.</p>
+      <div class="footer-icons">
+        <a href="https://www.facebook.com/share/boJXacJUyFAjLFUn/" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://x.com/InfosysBatch2?s=08" target="_blank" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/online_travelguide/" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/online-travel-guide-637431336/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+    <div class="contact-info text-md-right">
+      <p class="contact-title">Contact Us</p>
+      <p class="contact-item">
+        <span class="email-symbol">✉</span> Tours69&#64;gmail.com
+      </p>
+      <p class="contact-item">
+        <span class="phone-symbol">☎</span> 918767899
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,53 @@
+[
+  {
+    "username": "fathima",
+    "fullName": "fathima",
+    "phone": "1234567890",
+    "email": "fathima123@gmail.com",
+    "password": "Fathima@123",
+    "originalUsername": "fathimaaaaaaaaa"
+  },
+  {
+    "username": "Sailajaa",
+    "fullName": "Y.Sailaja",
+    "phone": "23456789010",
+    "email": "sailu69@gmail.com",
+    "password": "Sailu@1369",
+    "originalUsername": "Sailaja"
+  },
+  {
+    "username": "nanna nanna",
+    "fullName": "nanna",
+    "phone": "1234567890",
+    "email": "mbsravanthi2006@gmail.com",
+    "password": "Sushma@1234"
+  },
+  {
+    "username": "bindu sravanthi",
+    "fullName": "Bindu",
+    "phone": "1234567890",
+    "email": "mbsravanthi2006@gmail.com",
+    "password": "Bindu@123"
+  },
+  {
+    "username": "sushu",
+    "fullName": "Vemula Sushma",
+    "phone": "1234567890",
+    "email": "sushmavemula42@gmail.com",
+    "password": "Sushma@1234"
+  },
+  {
+    "username": "nandu",
+    "fullName": "sushma",
+    "phone": "1234567890",
+    "email": "mbsravanthi2006@gmail.com",
+    "password": "Sushma@12345"
+  },
+  {
+    "username": "padma",
+    "fullName": "Padmavathi",
+    "phone": "1234567890",
+    "email": "Padma2@gmail.com",
+    "password": "Padmavathi@!234"
+  }
+]

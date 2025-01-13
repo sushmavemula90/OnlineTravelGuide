@@ -1,0 +1,73 @@
+<div class="video-container">
+  <video autoplay loop muted>
+    <source src="/video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay">
+    <div class="location-container">
+      <div class="form-group">
+        <label for="start-location">Start Location</label>
+        <input
+          id="start-location"
+          type="text"
+          [(ngModel)]="startPoint"
+          (input)="updatePlaces()"
+          class="form-control"
+          placeholder="Enter start location"
+        />
+      </div>
+      
+      <div class="form-group">
+        <label for="end-location">End Location</label>
+        <input
+          id="end-location"
+          type="text"
+          [(ngModel)]="endPoint"
+          (input)="updatePlaces()"
+          class="form-control"
+          placeholder="Enter end location"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="places">Places</label>
+        <select id="places" class="form-control" [disabled]="filteredPlaces.length === 0">
+          <option *ngFor="let place of filteredPlaces" [value]="place">{{ place }}</option>
+          <option *ngIf="filteredPlaces.length === 0" disabled>No places available</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="footer bg-dark text-white text-center py-3">
+  <div class="container d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center">
+    <div class="text-center mb-3 mb-md-0">
+      <p class="m-0">© 2024 Online Tour Guide. All rights reserved.</p>
+      <div class="footer-icons">
+        <a href="https://www.facebook.com/share/boJXacJUyFAjLFUn/" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://x.com/InfosysBatch2?s=08" target="_blank" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/online_travelguide/" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/online-travel-guide-637431336/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+    <div class="contact-info text-md-right">
+      <p class="contact-title">Contact Us</p>
+      <p class="contact-item">
+        <span class="email-symbol">✉</span> Tours69&#64;gmail.com
+      </p>
+      <p class="contact-item">
+        <span class="phone-symbol">☎</span> 918767899
+      </p>
+    </div>
+  </div>
+</footer>

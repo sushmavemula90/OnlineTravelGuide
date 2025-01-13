@@ -1,0 +1,95 @@
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  overflow: hidden;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent background */
+  display: flex;
+  justify-content: top;
+  align-items: center;
+  flex-direction: column; /* Stack elements vertically */
+  padding: 20px;
+}
+
+.location-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 800px; /* Limit width for better readability */
+  margin: 0 auto; /* Center the container */
+}
+
+.form-group {
+  flex: 1; /* Allow equal width for all input groups */
+  margin: 0 10px; /* Add some margin between input groups */
+  color:white;
+  font-size: 1.2rem;
+}
+
+.form-control {
+  background-color: white; /* White background for input fields */
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+.form-control:focus {
+  border-color: #80bdff; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+footer {
+  background-color: #343a40;
+  color: white;
+  padding: 2px;
+  text-align: center;
+}
+
+footer a {
+  color: #11d038ac;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #f8f9fa;
+}
+
+footer p {
+  margin: 0;
+}
+
+.footer-icons a {
+  color: white;
+  margin: 0 10px;
+  font-size: 1rem;
+}
+
+.footer-icons a:hover {
+  color: #11d038ac;
+}
+
+.contact-info {
+  text-align: left; 
+  margin-top: 10px; 
+}
+
+.contact-title {
+  padding: 0 25%;
+  border-bottom: 2px solid; 
+  margin-bottom: 10px; 
+}

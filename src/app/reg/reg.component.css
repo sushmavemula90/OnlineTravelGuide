@@ -1,0 +1,153 @@
+.registration-container {
+  width: 100%;
+  max-width: 600px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 50px auto;
+}
+
+.registration-title {
+  font-size: 2.5rem; /* Larger title */
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.2rem; /* Larger font for labels */
+  color: #555;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Eye icon styling for password and confirm password fields */
+.eye-icon {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* OTP input and button styling */
+/* OTP input and button styling */
+.otp-input {
+  width: calc(70% - 10px);
+  display: inline-block;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.send-otp-button, .validate-otp-button {
+  width: calc(30% - 10px);
+  padding: 10px;
+  background-color: rgb(13, 183, 13);
+  color: white;
+  border: none;
+  border-radius: 20px; /* Increased border-radius for oval shape */
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.send-otp-button:hover, .validate-otp-button:hover {
+  background-color: rgb(10, 150, 10);
+}
+
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.submit-button:hover {
+  background-color: #19ba21;
+}
+
+.error-message {
+  font-size: 0.9rem;
+  color: red;
+}
+
+.register-link {
+  margin-top: 20px;
+  text-align: right;
+  font-size: 1.1rem;
+}
+
+.register-link a {
+  text-decoration: none;
+  color: #007BFF;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Footer section styling */
+footer {
+  background-color: #343a40;
+  color: white;
+  padding: 2px;
+  text-align: center;
+}
+
+footer a {
+  color: #11d038ac;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #f8f9fa;
+}
+
+footer p {
+  margin: 0;
+}
+
+.footer-icons a {
+  color: white;
+  margin: 0 10px;
+  font-size: 1rem;
+}
+
+.footer-icons a:hover {
+  color: #11d038ac;
+}
+
+.contact-info {
+  text-align: left; 
+  margin-top: 10px; 
+}
+
+.contact-title {
+  padding: 0 25%;
+  border-bottom: 2px solid; 
+  margin-bottom: 10px; 
+}
+

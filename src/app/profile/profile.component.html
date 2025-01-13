@@ -1,0 +1,55 @@
+<!-- profile.component.html -->
+<div class="profile-container">
+  <h2>User Profile</h2>
+  <div>
+    <label>Username:</label>
+    <input [(ngModel)]="username" [readonly]="!isEditing" />
+  </div>
+  <div>
+    <label>Full Name:</label>
+    <input [(ngModel)]="fullName" [readonly]="!isEditing" />
+  </div>
+  <div>
+    <label>Email:</label>
+    <input [(ngModel)]="email" [readonly]="!isEditing" />
+  </div>
+  <div>
+    <label>Phone:</label>
+    <input [(ngModel)]="phone" [readonly]="!isEditing" />
+  </div>
+  <button (click)="toggleEdit()">{{ isEditing ? 'Cancel' : 'Edit' }}</button>
+  <button *ngIf="isEditing" (click)="saveProfile()">Save</button>
+</div>
+
+
+<!-- Footer Section -->
+<footer class="footer bg-dark text-white text-center py-3">
+  <div class="container d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center">
+    <div class="text-center mb-3 mb-md-0">
+      <p class="m-0">© 2024 Online Tour Guide. All rights reserved.</p>
+      <div class="footer-icons">
+        <a href="https://www.facebook.com/share/boJXacJUyFAjLFUn/" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://x.com/InfosysBatch2?s=08" target="_blank" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/online_travelguide/" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/online-travel-guide-637431336/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+    <div class="contact-info text-md-right">
+      <p class="contact-title">Contact Us</p>
+      <p class="contact-item">
+        <span class="email-symbol">✉</span> Tours69&#64;gmail.com
+      </p>
+      <p class="contact-item">
+        <span class="phone-symbol">☎</span> 918767899
+      </p>
+    </div>
+  </div>
+</footer>
